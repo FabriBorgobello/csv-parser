@@ -13,8 +13,8 @@ A Python script that processes CSV files and generates a report.
 1. Clone the repository
 
 ```bash
-git clone https://yourprojectrepository.com
-cd your-project-directory
+git clone https://github.com/FabriBorgobello/csv-parser
+cd csv-parser
 ```
 
 2. Create and activate a virtual environment
