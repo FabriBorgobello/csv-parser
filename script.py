@@ -9,11 +9,15 @@ directory = 'data'
 # ANSI escape sequences for colors
 GREEN = '\033[92m'
 CYAN = '\033[96m'
+RED = '\033[91m'
 ENDC = '\033[0m'
 
 # Initialize a list to store summary information for each file
 summary_list = []
+total_time = 0
 
+print(f"{GREEN}Processing files in '{directory}' directory, please wait...{ENDC}")
+print("-" * 40)
 for filename in os.listdir(directory):
     if filename.endswith('.csv'):  # Only process CSV files
         filepath = os.path.join(directory, filename)
@@ -49,14 +53,16 @@ for filename in os.listdir(directory):
             
             end_time = time.time()  # End timing after processing the file
             duration = end_time - start_time  # Calculate the duration
+            total_time += duration  # Add the duration to the total time
             
             print(f"Processed {filename} in {duration:.2f} seconds.")  # Print the processing time for the file
             print("-" * 40)
             
         except Exception as e:
-            print(f"Error processing {filename}: {e}")
+            print(f"{RED}Error processing {filename}: {e}{ENDC}")
 
 # Print the comprehensive summary
-print("Comprehensive Summary:")
+print(f"{GREEN}Comprehensive Summary:{ENDC}")
 for summary in summary_list:
     print(summary)
+print(f"{CYAN}Total processing time for all files: {total_time:.2f} seconds.{ENDC}")

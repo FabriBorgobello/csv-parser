@@ -43,12 +43,16 @@ pip install -r requirements.txt
 
 4. Add the CSV files
 
-   Add the CSV files to the `data` directory (create it if it doesn't exist). Make sure the CSV files follow this naming convention: `YYYYMMDD_*.csv` (e.g. `20210101_Viajes_distritos.csv`).
+   Add the CSV files to the `data` folder (create it if it doesn't exist). Make sure the CSV files follow this naming convention: `YYYYMMDD_*.csv` (e.g. `20210101_Viajes_distritos.csv`).
 
 ## Usage
 
 Run the script
 
 ```bash
+# For Unix/macOS
+python3 script.py
+
+# For Windows
 python script.py
 ```
