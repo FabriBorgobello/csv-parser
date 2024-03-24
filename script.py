@@ -66,3 +66,10 @@ print(f"{GREEN}Comprehensive Summary:{ENDC}")
 for summary in summary_list:
     print(summary)
 print(f"{CYAN}Total processing time for all files: {total_time:.2f} seconds.{ENDC}")
+
+
+# Convert the summary list to a DataFrame
+summary_df = pd.DataFrame(summary_list)
+# Output the DataFrame to an Excel file
+summary_df.to_excel('output/summary.xlsx', index=False, sheet_name='Summary')
+
